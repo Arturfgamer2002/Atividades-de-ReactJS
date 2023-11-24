@@ -1,0 +1,26 @@
+.Usuario {
+    border: 4px double #8FBC8F;
+    background-color: #000;
+    color:aqua;
+    padding: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Senha {
+    border: 4px double #8FBC8F;
+    background-color: #000;
+    color:aqua;
+    padding: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+button {
+    border: 4px double #8FBC8F;
+    background-color: #000;
+    color:aqua;
+    padding: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}

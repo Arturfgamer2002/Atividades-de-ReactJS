@@ -1,26 +1,30 @@
-import React from "react";
+import  TableItem  from "../TableIntem";
 import "./index.css";
-import TableItem from "../TableIntem"; 
 
-// Insira a prop list
-const TableArea = ({ list }) => {
+export const TableArea = ({ list }) => {
   return (
     <table className="table">
       <thead>
         <tr>
-          <th className="tableHeadColumn">Data</th>
-          <th className="tableHeadColumn">Categoria</th>
-          <th className="tableHeadColumn">Título</th> 
-          <th className="tableHeadColumn">Valor</th>
+          <th className="tableHeadColumn" style={{ width: 100 }}>
+            Data
+          </th>
+          <th className="tableHeadColumn" style={{ width: 130 }}>
+            Categoria
+          </th>
+          <th className="tableHeadColumn" style={{ width: 140 }}>
+            Título
+          </th>
+          <th className="tableHeadColumn" style={{ width: 150 }}>
+            Valor
+          </th>
         </tr>
       </thead>
       <tbody>
-        {list.map((item, index) => (
-          <TableItem key={index} item={item} />
-        ))}
+        {list.map((item, index) => {
+         return <TableItem key={index} item={item} />
+      })}
       </tbody>
     </table>
   );
 };
-
-export default TableArea;

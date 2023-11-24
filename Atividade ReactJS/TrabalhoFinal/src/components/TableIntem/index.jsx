@@ -1,14 +1,12 @@
-import { formatDate } from "../../helpers/dateFilter";
+import { formatDate } from "../../helpers/dataFilter";
 import { categories } from "../../data/categories";
 import "./index.css";
 
-// Insira a prop necessária.
-export const TableItem = (item) => {
-  // Insira nos elementos td a className="tableColumn"
+ const TableItem = ({ item }) => {
   return (
     <tr>
-      <td>{formatDate(item.date)}</td>
-      <td>
+      <td className="tableColumn">{formatDate(item.date)}</td>
+      <td className="tableColumn">
         <div
           className="category"
           style={{ color: categories[item.category].color }}
@@ -16,8 +14,8 @@ export const TableItem = (item) => {
           {categories[item.category].title}
         </div>
       </td>
-      <td>{item.title}</td>
-      <td>
+      <td className="tableColumn">{item.title}</td>
+      <td className="tableColumn">
         <div
           className="value"
           style={{

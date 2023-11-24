@@ -4,11 +4,8 @@ import "./index.css";
 
 const Login = () => {
   const navigate = useNavigate();
-  // Crie um state para username iniciando como string vazia.
   const [username, setUsername] = useState("");
-  // Crie um state para password iniciando como string vazia.
   const [password, setPassword] = useState("");
-  // Crie um state para message iniciando como string vazia.
   const [message, setMessage] = useState("");
 
   const handleLogin = async () => {
@@ -30,22 +27,22 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <img src="/public/imagens/minecraft.png" style={{ width: 50 }} alt="Logo" />
-      <h2 className="login-title">Logar</h2>
+      <img src="./public/imagens/minecraft.png" style={{ width: 50 }} />
+      <h2 className="login-title">Login</h2>
       <input
         type="text"
-        placeholder="Username"
+        placeholder="Nome de Usuário"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
-        placeholder="Password"
+        placeholder="Senha"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="login-button" onClick={handleLogin}>
-        Logar
+      <button onClick={handleLogin} className="login-button">
+        Login
       </button>
       <p>{message}</p>
     </div>

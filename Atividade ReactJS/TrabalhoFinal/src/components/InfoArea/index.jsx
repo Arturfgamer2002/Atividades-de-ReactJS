@@ -1,13 +1,11 @@
 import { formatCurrentMonth } from "../../helpers/dataFilter";
+import { ResumeItem } from "../ResumeIntem";
 import "./index.css";
-import ResumeItem from "../ResumeIntem"; 
 
-
-// Insira as props que faltam.
-const InfoArea = ({ currentMonth, onMonthChange, income, expense }) => {
+export const InfoArea = ({ currentMonth, onMonthChange, income, expense }) => {
   const handlePrevMonth = () => {
-    let [year, month] = currentMonth.split("-"); 
-    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1); 
+    let [year, month] = currentMonth.split("-");
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
     currentDate.setMonth(currentDate.getMonth() - 1);
     onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
   };
@@ -31,15 +29,10 @@ const InfoArea = ({ currentMonth, onMonthChange, income, expense }) => {
         </div>
       </div>
       <div className="resumeArea">
-        {/* ResumeItem para Receitas */}
-        <ResumeItem label="Receitas" value={income} color="green" />
-
-        {/* ResumeItem para Despesas */}
-        <ResumeItem label="Despesas" value={expense} color="red" />
-
-        {/* ResumeItem para Balanço */}
+        <ResumeItem title="Receitas" value={income} color={"green"} />
+        <ResumeItem title="Despesas" value={expense} color={"red"} />
         <ResumeItem
-          label="Balanço"
+          title="Balanço"
           value={income - expense}
           color={income - expense < 0 ? "red" : "green"}
         />
@@ -47,4 +40,3 @@ const InfoArea = ({ currentMonth, onMonthChange, income, expense }) => {
     </div>
   );
 };
-export default InfoArea
